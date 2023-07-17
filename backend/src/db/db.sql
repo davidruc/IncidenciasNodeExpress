@@ -101,3 +101,4 @@ CREATE TABLE incidencia (
     FOREIGN KEY (equipo_indicencia) REFERENCES equipo(id_equipo),
     FOREIGN KEY (lugar_incidencia) REFERENCES salon(id_salon)
 );
+SELECT * FROM categoria
