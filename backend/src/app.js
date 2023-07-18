@@ -4,7 +4,8 @@ import routesCategorias from "./routes/categoria.routes.js";
 import routesTipoIncidencia from "./routes/tipoIncidencia.routes.js";
 import routesReporteIncidencia from "./routes/reporteIncidencia.routes.js";
 import routesEstado from "./routes/estado.routes.js";
-import routesTrainers from "./routes/trainers.routes.js"
+import routesTrainers from "./routes/trainers.routes.js";
+import routesPantalla from "./routes/pantalla.routes.js";
 import 'reflect-metadata';
 /* import {SignJWT, jwtVerify} from 'jose';  */
 
@@ -19,7 +20,7 @@ app.use("/tipoIncidencia", routesTipoIncidencia);
 app.use("/reporteIncidencia", routesReporteIncidencia);
 app.use("/estados", routesEstado);
 app.use("/trainer", routesTrainers); 
-
+app.use("/pantalla", routesPantalla);
 // textEnconder es una instacia de node para traer las encriptaciones de node
 
 // SignJWT es una clase que retorna promesas.
