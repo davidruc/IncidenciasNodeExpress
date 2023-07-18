@@ -10,16 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Expose, Transform } from "class-transformer";
 import { IsInt } from 'class-validator';
 import 'reflect-metadata';
-export class categoria {
-    constructor(categoria, descripcion, idBuscado) {
-        this.id_categoria = categoria;
-        this.tipo_categoria = descripcion;
+export class Estado {
+    constructor(estado, descripcion, idBuscado) {
+        this.id_estado = estado;
+        this.nombre_estado = descripcion;
         this.id = idBuscado;
     }
 }
 __decorate([
     IsInt(),
-    Expose({ name: "id_categoria" }),
+    Expose({ name: "id_estado" }),
     Transform(({ value }) => {
         if (/^[0-9]+$/.test(value) || typeof value == "undefined")
             return (value);
@@ -27,15 +27,17 @@ __decorate([
             throw { status: 400, message: "el dato del id ingresado es incorrecto, ingresa un número entero" };
     }, { toClassOnly: true }),
     __metadata("design:type", Number)
-], categoria.prototype, "id_categoria", void 0);
+], Estado.prototype, "id_estado", void 0);
 __decorate([
-    Expose({ name: "tipo_categoria" }),
-    Transform(({ value }) => { if (/^[a-z A-Z áéíóúÁÉÍÓÚñÑüÜ]+$/.test(value) || typeof value == "undefined")
-        return value;
-    else
-        throw { status: 400, message: `El dato nombre incumple los parametros acordados` }; }, { toClassOnly: true }),
+    Expose({ name: "nombre_estado" }),
+    Transform(({ value }) => {
+        if (/^[a-z A-Z áéíóúÁÉÍÓÚñÑüÜ]+$/.test(value) || typeof value == "undefined")
+            return value;
+        else
+            throw { status: 400, message: `El dato nombre incumple los parametros acordados` };
+    }, { toClassOnly: true }),
     __metadata("design:type", String)
-], categoria.prototype, "tipo_categoria", void 0);
+], Estado.prototype, "nombre_estado", void 0);
 __decorate([
     IsInt(),
     Expose({ name: "id" }),
@@ -46,4 +48,4 @@ __decorate([
             throw { status: 400, message: "el dato del id ingresado es incorrecto, ingresa un número entero" };
     }, { toClassOnly: true }),
     __metadata("design:type", Number)
-], categoria.prototype, "id", void 0);
+], Estado.prototype, "id", void 0);

@@ -30,7 +30,7 @@ __decorate([
 ], TipoIncidencia.prototype, "id_tipo_incidencia", void 0);
 __decorate([
     Expose({ name: "tipo_incidencia" }),
-    Transform(({ value }) => { if (/^[a-z A-Z áéíóúÁÉÍÓÚñÑüÜ]+$/.test(value))
+    Transform(({ value }) => { if (/^[a-z A-Z áéíóúÁÉÍÓÚñÑüÜ]+$/.test(value) || typeof value == "undefined")
         return value;
     else
         throw { status: 400, message: `El dato nombre incumple los parametros acordados` }; }, { toClassOnly: true }),

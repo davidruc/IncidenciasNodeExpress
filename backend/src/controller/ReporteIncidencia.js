@@ -30,7 +30,7 @@ __decorate([
 ], ReporteIncidencia.prototype, "id_reporte", void 0);
 __decorate([
     Expose({ name: "fecha_reporte" }),
-    Transform(({ value }) => { if (/^\d{4}-\d{2}-\d{2}$/.test(value))
+    Transform(({ value }) => { if (/^\d{4}-\d{2}-\d{2}$/.test(value) || typeof value == "undefined")
         return (value);
     else
         throw { status: 400, message: `el parámetro ingresado para fecha no es válido, debe seguir la sintaxis AAAA-MM-DD` }; }, { toClassOnly: true }),
