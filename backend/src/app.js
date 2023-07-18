@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import routesCategorias from "./routes/categoria.routes.js";
+import routesTipoIncidencia from "./routes/tipoIncidencia.routes.js";
 import 'reflect-metadata';
 import {SignJWT, jwtVerify} from 'jose'; 
 
@@ -10,7 +11,8 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/categoria", routesCategorias);    
+app.use("/categoria", routesCategorias);   
+app.use("/tipoIncidencia", routesTipoIncidencia);
 
 // textEnconder es una instacia de node para traer las encriptaciones de node
 
