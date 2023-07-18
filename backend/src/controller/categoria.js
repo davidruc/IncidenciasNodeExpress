@@ -11,9 +11,10 @@ import { Expose, Transform } from "class-transformer";
 import { IsInt } from 'class-validator';
 import 'reflect-metadata';
 export class categoria {
-    constructor(categoria, descripcion) {
+    constructor(categoria, descripcion, idBuscado) {
         this.id_categoria = categoria;
         this.tipo_categoria = descripcion;
+        this.id = idBuscado;
     }
 }
 __decorate([
@@ -35,3 +36,14 @@ __decorate([
         throw { status: 400, message: `El dato nombre incumple los parametros acordados` }; }, { toClassOnly: true }),
     __metadata("design:type", String)
 ], categoria.prototype, "tipo_categoria", void 0);
+__decorate([
+    IsInt(),
+    Expose({ name: "id" }),
+    Transform(({ value }) => {
+        if (/^[0-9]+$/.test(value) || typeof value == "undefined")
+            return (value);
+        else
+            throw { status: 400, message: "el dato del id ingresado es incorrecto, ingresa un número entero" };
+    }, { toClassOnly: true }),
+    __metadata("design:type", Number)
+], categoria.prototype, "id", void 0);
