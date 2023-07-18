@@ -4,6 +4,7 @@ import routesCategorias from "./routes/categoria.routes.js";
 import routesTipoIncidencia from "./routes/tipoIncidencia.routes.js";
 import routesReporteIncidencia from "./routes/reporteIncidencia.routes.js";
 import routesEstado from "./routes/estado.routes.js";
+import routesTrainers from "./routes/trainers.routes.js"
 import 'reflect-metadata';
 /* import {SignJWT, jwtVerify} from 'jose';  */
 
@@ -17,6 +18,7 @@ app.use("/categoria", routesCategorias);
 app.use("/tipoIncidencia", routesTipoIncidencia);
 app.use("/reporteIncidencia", routesReporteIncidencia);
 app.use("/estados", routesEstado);
+app.use("/trainer", routesTrainers); 
 
 // textEnconder es una instacia de node para traer las encriptaciones de node
 
