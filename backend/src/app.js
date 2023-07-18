@@ -9,6 +9,7 @@ import routesPantalla from "./routes/pantalla.routes.js";
 import routestorre from "./routes/torre.routes.js";
 import routesteclado from "./routes/teclado.routes.js";
 import routesmouse from "./routes/mouse.routes.js";
+import routesdiadema from "./routes/diadema.routes.js";
 import 'reflect-metadata';
 /* import {SignJWT, jwtVerify} from 'jose';  */
 
@@ -27,6 +28,7 @@ app.use("/pantalla", routesPantalla);
 app.use("/torre", routestorre);
 app.use("/teclado", routesteclado);
 app.use("/mouse", routesmouse);
+app.use("/diadema", routesdiadema);
 // textEnconder es una instacia de node para traer las encriptaciones de node
 
 // SignJWT es una clase que retorna promesas.
